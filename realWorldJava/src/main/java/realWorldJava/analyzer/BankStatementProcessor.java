@@ -13,7 +13,7 @@ public class BankStatementProcessor {
     }
 
     // Обработка списка транзакций
-    public static double calculateTotalAmount(final List<BankTransaction> bankTransactions) {
+    public double calculateTotalAmount() {
         double total = 0d;
         for (final BankTransaction bankTransaction : bankTransactions) {
             total += bankTransaction.getAmount();
@@ -21,7 +21,7 @@ public class BankStatementProcessor {
         return total;
     }
 
-    public static List<BankTransaction> selectInMonth(final List<BankTransaction> bankTransactions, final Month month){
+    public List<BankTransaction> selectInMonth(final List<BankTransaction> bankTransactions, final Month month){
 
         final List<BankTransaction> bankTransactionsInMonth = new ArrayList<>();
         for (final BankTransaction bankTransaction : bankTransactions) {
