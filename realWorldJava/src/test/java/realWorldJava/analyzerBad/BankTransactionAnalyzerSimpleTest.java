@@ -1,4 +1,4 @@
-package realWorldJava.analyzer;
+package realWorldJava.analyzerBad;
 
 
 import org.junit.jupiter.api.BeforeAll;

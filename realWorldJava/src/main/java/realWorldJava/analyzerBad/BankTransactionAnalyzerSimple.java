@@ -1,4 +1,4 @@
-package realWorldJava.analyzer;
+package realWorldJava.analyzerBad;
 
 import java.io.IOException;
 import java.nio.file.Files;
