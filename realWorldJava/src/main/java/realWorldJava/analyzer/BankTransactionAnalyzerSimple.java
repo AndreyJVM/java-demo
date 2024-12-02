@@ -51,3 +51,7 @@ public class BankTransactionAnalyzerSimple {
         System.out.println("The total for all transactions is " + total);
     }
 }
+
+
+// Плохая практика в программировании на Java, как разработчик вы должны избегать классов, которые решают сразу все задачи
+// Класс-бог - это тяжелый для понимания и достаточно хрупкий класс
