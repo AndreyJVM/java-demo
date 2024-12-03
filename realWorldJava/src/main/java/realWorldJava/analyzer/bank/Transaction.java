@@ -1,16 +1,16 @@
-package realWorldJava.analyzer;
+package realWorldJava.analyzer.bank;
 
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class BankTransaction {
+public class Transaction {
 
     private final LocalDate date;
     private final double amount;
     private final String description;
 
 
-    public BankTransaction(final LocalDate date, final double amount, final String description) {
+    public Transaction(final LocalDate date, final double amount, final String description) {
         this.date = date;
         this.amount = amount;
         this.description = description;
@@ -40,7 +40,7 @@ public class BankTransaction {
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;
-        BankTransaction that = (BankTransaction) o;
+        Transaction that = (Transaction) o;
         return Double.compare(amount, that.amount) == 0 &&
                 Objects.equals(date, that.date) &&
                 Objects.equals(description, that.description);

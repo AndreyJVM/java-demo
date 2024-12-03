@@ -1,30 +1,30 @@
-package realWorldJava.analyzer;
+package realWorldJava.analyzer.bank;
 
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BankStatementProcessor {
+public class StatementProcessor {
 
-    private final List<BankTransaction> bankTransactions;
+    private final List<Transaction> bankTransactions;
 
-    public BankStatementProcessor(List<BankTransaction> bankTransactions) {
+    public StatementProcessor(List<Transaction> bankTransactions) {
         this.bankTransactions = bankTransactions;
     }
 
     // Обработка списка транзакций
     public double calculateTotalAmount() {
         double total = 0d;
-        for (final BankTransaction bankTransaction : bankTransactions) {
+        for (final Transaction bankTransaction : bankTransactions) {
             total += bankTransaction.getAmount();
         }
         return total;
     }
 
-    public List<BankTransaction> selectInMonth(final List<BankTransaction> bankTransactions, final Month month){
+    public List<Transaction> selectInMonth(final List<Transaction> bankTransactions, final Month month){
 
-        final List<BankTransaction> bankTransactionsInMonth = new ArrayList<>();
-        for (final BankTransaction bankTransaction : bankTransactions) {
+        final List<Transaction> bankTransactionsInMonth = new ArrayList<>();
+        for (final Transaction bankTransaction : bankTransactions) {
             if (bankTransaction.getDate().getMonth() == month) {
                 bankTransactionsInMonth.add(bankTransaction);
             }
@@ -34,7 +34,7 @@ public class BankStatementProcessor {
 
     public double calculateTotalInMonth(final Month month) {
         double total = 0;
-        for (BankTransaction bankTransaction : bankTransactions) {
+        for (Transaction bankTransaction : bankTransactions) {
             if (bankTransaction.getDate().getMonth() == month) {
                 total += bankTransaction.getAmount();
             }
@@ -44,7 +44,7 @@ public class BankStatementProcessor {
 
     public double calculateTotalForCategory(final String category) {
         double total = 0;
-        for (BankTransaction bankTransaction : bankTransactions) {
+        for (Transaction bankTransaction : bankTransactions) {
             if (bankTransaction.getDescription().equals(category)) {
                 total += bankTransaction.getAmount();
             }
