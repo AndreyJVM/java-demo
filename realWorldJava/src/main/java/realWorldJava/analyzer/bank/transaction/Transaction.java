@@ -1,4 +1,4 @@
-package realWorldJava.analyzer.bank;
+package realWorldJava.analyzer.bank.transaction;
 
 import java.time.LocalDate;
 import java.util.Objects;

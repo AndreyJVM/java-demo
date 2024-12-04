@@ -1,7 +1,7 @@
 package realWorldJava.analyzer;
 
-import realWorldJava.analyzer.bank.StatementAnalyzer;
-import realWorldJava.analyzer.bank.StatementParser;
+import realWorldJava.analyzer.bank.statement.StatementAnalyzer;
+import realWorldJava.analyzer.bank.statement.StatementParser;
 
 import java.io.IOException;
 

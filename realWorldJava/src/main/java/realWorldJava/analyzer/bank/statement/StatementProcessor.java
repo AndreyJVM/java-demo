@@ -1,4 +1,7 @@
-package realWorldJava.analyzer.bank;
+package realWorldJava.analyzer.bank.statement;
+
+import realWorldJava.analyzer.bank.transaction.ITransactionFilter;
+import realWorldJava.analyzer.bank.transaction.Transaction;
 
 import java.time.Month;
 import java.util.ArrayList;

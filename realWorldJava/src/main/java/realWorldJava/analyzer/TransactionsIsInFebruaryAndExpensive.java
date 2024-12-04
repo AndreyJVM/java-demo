@@ -1,7 +1,7 @@
 package realWorldJava.analyzer;
 
-import realWorldJava.analyzer.bank.ITransactionFilter;
-import realWorldJava.analyzer.bank.Transaction;
+import realWorldJava.analyzer.bank.transaction.ITransactionFilter;
+import realWorldJava.analyzer.bank.transaction.Transaction;
 
 import java.time.Month;
 

@@ -1,4 +1,6 @@
-package realWorldJava.analyzer.bank;
+package realWorldJava.analyzer.bank.statement;
+
+import realWorldJava.analyzer.bank.transaction.Transaction;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

@@ -1,4 +1,4 @@
-package realWorldJava.analyzer.bank;
+package realWorldJava.analyzer.bank.transaction;
 
 @FunctionalInterface
 public interface ITransactionSummarizer {
