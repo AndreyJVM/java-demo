@@ -62,3 +62,6 @@
 
 ---
 
+**Исключения Java**
+
+![](src/main/resources/exceptionsInJavaHierarchy.png)
