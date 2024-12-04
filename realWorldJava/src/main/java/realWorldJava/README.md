@@ -64,4 +64,4 @@
 
 **Исключения Java**
 
-![](realWorldJava/src/main/resources/exceptionsInJavaHierarchy.png)
+![exceptionsInJavaHierarchy.png](src/main/resources/exceptionsInJavaHierarchy.png)
