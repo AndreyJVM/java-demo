@@ -6,16 +6,16 @@ import java.util.List;
 
 public class StatementProcessor {
 
-    private final List<Transaction> bankTransactions;
+    private final List<Transaction> transactions;
 
     public StatementProcessor(List<Transaction> bankTransactions) {
-        this.bankTransactions = bankTransactions;
+        this.transactions = bankTransactions;
     }
 
     // Обработка списка транзакций
     public double calculateTotalAmount() {
         double total = 0d;
-        for (final Transaction bankTransaction : bankTransactions) {
+        for (final Transaction bankTransaction : transactions) {
             total += bankTransaction.getAmount();
         }
         return total;
@@ -34,7 +34,7 @@ public class StatementProcessor {
 
     public double calculateTotalInMonth(final Month month) {
         double total = 0;
-        for (Transaction bankTransaction : bankTransactions) {
+        for (Transaction bankTransaction : transactions) {
             if (bankTransaction.getDate().getMonth() == month) {
                 total += bankTransaction.getAmount();
             }
@@ -44,11 +44,21 @@ public class StatementProcessor {
 
     public double calculateTotalForCategory(final String category) {
         double total = 0;
-        for (Transaction bankTransaction : bankTransactions) {
+        for (Transaction bankTransaction : transactions) {
             if (bankTransaction.getDescription().equals(category)) {
                 total += bankTransaction.getAmount();
             }
         }
         return total;
+    }
+
+    public List<Transaction> findTransactions (final ITransactionFilter transactionFilter) {
+        final List<Transaction> result = new ArrayList<>();
+        for (final Transaction transaction: transactions) {
+            if (transactionFilter.test(transaction)) {
+                result.add(transaction);
+            }
+        }
+        return result;
     }
 }
