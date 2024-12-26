@@ -1,5 +1,6 @@
 package realWorldJava.analyzer.bank.statement;
 
+import realWorldJava.analyzer.bank.exporter.IExporter;
 import realWorldJava.analyzer.bank.transaction.Transaction;
 
 import java.io.IOException;
@@ -11,9 +12,11 @@ import java.util.List;
 
 public class StatementAnalyzer {
 
-    private static final String RESOURCES = "src/main/resources";
+    private static final String RESOURCES = "src/main/resources/";
 
-    public void analyze(final String fileName, final StatementParser bankStatementParser)
+    public void analyze(final String fileName,
+                        final StatementParser bankStatementParser,
+                        final IExporter exporter)
             throws IOException {
 
         final Path path = Paths.get(RESOURCES + fileName);

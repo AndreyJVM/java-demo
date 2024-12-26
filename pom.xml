@@ -10,12 +10,32 @@
     <packaging>pom</packaging>
     <modules>
         <module>realWorldJava</module>
+        <module>scanOpenPorts</module>
+        <module>scanOpenPort</module>
     </modules>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--dependencies-->
+        <junit5.version>5.11.4</junit5.version>
+        <jakarta.validation-api.version>3.1.0</jakarta.validation-api.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit5.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>${jakarta.validation-api.version}</version>
+        </dependency>
+    </dependencies>
 
 </project>
