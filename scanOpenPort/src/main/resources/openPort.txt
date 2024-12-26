@@ -1,0 +1,15 @@
+Host: localhost, 80 is opened!
+Host: localhost, 631 is opened!
+Host: localhost, 3002 is opened!
+Host: localhost, 3000 is opened!
+Host: localhost, 3003 is opened!
+Host: localhost, 3005 is opened!
+Host: localhost, 3006 is opened!
+Host: localhost, 3004 is opened!
+Host: localhost, 3001 is opened!
+Host: localhost, 37658 is opened!
+Host: localhost, 40119 is opened!
+Host: localhost, 41341 is opened!
+Host: localhost, 46189 is opened!
+Host: localhost, 51186 is opened!
+Host: localhost, 63342 is opened!

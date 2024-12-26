@@ -1,6 +1,8 @@
 package spring;
 
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
@@ -15,8 +17,14 @@ public class ScanOpenPorts {
     private static final int THREADS =  100;
 
 
-    public static void scanOpenPorts(String host) {
+    public static void scanOpenPorts(String host) throws IOException {
         System.out.println("Scanning ports:");
+
+        String openPortFile = "scanOpenPort/src/main/resources/openPort.txt";
+        String closePortFile = "scanOpenPort/src/main/resources/closePort.txt";
+
+        PrintWriter openPrintWriter = new PrintWriter(new FileWriter(openPortFile));
+        PrintWriter closePrintWriter = new PrintWriter(new FileWriter(closePortFile));
 
         ExecutorService executorService = Executors.newFixedThreadPool(THREADS);
 
@@ -27,9 +35,9 @@ public class ScanOpenPorts {
 
                 try (var socket = new Socket()) {
                     socket.connect(inetSocketAddress, TIMEOUT);
-                    System.out.printf("Host: %s, port %d is opened\n", host, port);
-                } catch (IOException ignored) {
-
+                    openPrintWriter.println("Host: " + host + ", " + port + " is opened!");
+                } catch (IOException e) {
+                    closePrintWriter.println(port + " — " + e.getMessage());
                 }
             });
         }
@@ -39,6 +47,9 @@ public class ScanOpenPorts {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        openPrintWriter.close();
+        closePrintWriter.close();
         System.out.println("Finish");
     }
 }
