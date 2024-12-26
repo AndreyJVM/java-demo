@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class SplitExam {
+public class SplitExample {
     public static void main(String[] args) {
         String[] inputMessages = readInput();
         String message1, message2;

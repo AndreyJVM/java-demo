@@ -11,7 +11,7 @@ class SplitExam_Test {
         // Arrange
         String inputLine = "Hello|World";
         // Act
-        String[] result = SplitExam.readInput(inputLine);
+        String[] result = SplitExample.readInput(inputLine);
         // Assert
         assertArrayEquals(new String[]{"Hello", "World"}, result);
     }
@@ -21,7 +21,7 @@ class SplitExam_Test {
         // Arrange
         String emptyInput = "";
         // Act & Assert
-        assertThrows(IllegalArgumentException.class, () -> SplitExam.readInput(emptyInput));
+        assertThrows(IllegalArgumentException.class, () -> SplitExample.readInput(emptyInput));
     }
 
     @Test
@@ -29,7 +29,7 @@ class SplitExam_Test {
         // Arrange
         String nullInput = null;
         // Act & Assert
-        assertThrows(NullPointerException.class, () -> SplitExam.readInput(nullInput));
+        assertThrows(NullPointerException.class, () -> SplitExample.readInput(nullInput));
     }
 
     @Test
@@ -37,7 +37,7 @@ class SplitExam_Test {
         // Arrange
         String singleWordInput = "Hello";
         // Act
-        String[] result = SplitExam.readInput(singleWordInput);
+        String[] result = SplitExample.readInput(singleWordInput);
         // Assert
         assertEquals(1, result.length);
         assertEquals("Hello", result[0]);
@@ -48,7 +48,7 @@ class SplitExam_Test {
         // Arrange
         String multiWordInput = "Hello   |  World  |  !";
         // Act
-        String[] result = SplitExam.readInput(multiWordInput);
+        String[] result = SplitExample.readInput(multiWordInput);
         // Assert
         assertArrayEquals(new String[]{"Hello", "World", "!"}, result);
     }
@@ -58,7 +58,7 @@ class SplitExam_Test {
         // Arrange
         String multiWordInputWithEmptySpace = "Hello   |  World  |  ";
         // Act
-        String[] result = SplitExam.readInput(multiWordInputWithEmptySpace);
+        String[] result = SplitExample.readInput(multiWordInputWithEmptySpace);
         // Assert
         assertArrayEquals(new String[]{"Hello", "World", ""}, result);
     }
