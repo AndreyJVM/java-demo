@@ -1,6 +1,5 @@
 package realWorldJava.analyzerBad;
 
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -19,16 +18,15 @@ class BankTransactionAnalyzerSimpleTest {
     @BeforeAll
     static void setUp() throws IOException {
         path = Paths.get("src/main/resources/records.csv");
-        // Создание или обновление файла testFile.txt с данными для тестирования
     }
 
     @Test
     void testReadFile() throws IOException {
         List<String> lines = Files.readAllLines(path);
         List<Object> expectedLines = List.of();
-        assertEquals(expectedLines.size(), lines.size()); // Проверка количества строк
+        assertEquals(expectedLines.size(), lines.size());
         for (String line : lines) {
-            // Дополнительные проверки содержания строк
+
         }
     }
 }

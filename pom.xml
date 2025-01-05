@@ -10,8 +10,8 @@
     <packaging>pom</packaging>
     <modules>
         <module>realWorldJava</module>
-        <module>scanOpenPorts</module>
         <module>scanOpenPort</module>
+        <module>documentManagementSystem</module>
     </modules>
 
     <properties>
